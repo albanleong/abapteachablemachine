@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_WAPA" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <ATTRIBUTES>
+    <APPLNAME>ZZATM</APPLNAME>
+    <APPLEXT>ZZATM</APPLEXT>
+    <SECURITY>X</SECURITY>
+    <ORIGLANG>E</ORIGLANG>
+    <MODIFLANG>E</MODIFLANG>
+    <TEXT>ABAP Teachable Machine Game</TEXT>
+   </ATTRIBUTES>
+   <PAGES>
+    <item>
+     <ATTRIBUTES>
+      <APPLNAME>ZZATM</APPLNAME>
+      <PAGEKEY>FLASHCARD.HTML</PAGEKEY>
+      <PAGENAME>flashcard.html</PAGENAME>
+      <MIMETYPE>text/html</MIMETYPE>
+      <LAYOUTLANGU>E</LAYOUTLANGU>
+      <VERSION>A</VERSION>
+      <LANGU>E</LANGU>
+      <DESCRIPT>Fash Card Game</DESCRIPT>
+     </ATTRIBUTES>
+     <EVENT_HANDLERS>
+      <O2PAGEVHS>
+       <APPLNAME>ZZATM</APPLNAME>
+       <PAGEKEY>FLASHCARD.HTML</PAGEKEY>
+       <EVHANDLER>ONREQUEST</EVHANDLER>
+       <VERSION>A</VERSION>
+       <EVHNAME>OnRequest</EVHNAME>
+       <SOURCE>
+        <item>* the handler is called whenever a request is made for a particular page</item>
+        <item>* it is used to restore the internal data structures from the request</item>
+        <item>  data(player_name) = request-&gt;get_form_field( &apos;player&apos; ).</item>
+        <item>  data(game_name) = request-&gt;get_form_field( &apos;game&apos; ).</item>
+        <item/>
+        <item>  if player_name is not initial and game_name is not initial.</item>
+        <item>    select single * from zzatm_players where name = @player_name into @player.</item>
+        <item>    select single * from zzatm_games   where name = @player_name</item>
+        <item>                                         and game = @game_name into @game.</item>
+        <item>    select * from zzatm_questions where name = @player_name</item>
+        <item>                                    and game = @game_name</item>
+        <item>      order by array_idx into table @questions.</item>
+        <item>    if sy-subrc eq 0.</item>
+        <item>      &quot; convert internal table to JSON so that it can be used in HTML</item>
+        <item>      questions_json = /ui2/cl_json=&gt;serialize( data = questions compress = abap_true pretty_name = /ui2/cl_json=&gt;pretty_mode-camel_case ).</item>
+        <item>    endif.</item>
+        <item>  endif.</item>
+       </SOURCE>
+      </O2PAGEVHS>
+     </EVENT_HANDLERS>
+     <PARAMETERS>
+      <O2PAGPARS>
+       <APPLNAME>ZZATM</APPLNAME>
+       <PAGEKEY>FLASHCARD.HTML</PAGEKEY>
+       <COMPNAME>GAME</COMPNAME>
+       <VERSION>A</VERSION>
+       <PARDECLTYP>1</PARDECLTYP>
+       <TYPTYPE>1</TYPTYPE>
+       <TYPE>ZZATM_GAMES</TYPE>
+       <ALIASNAME>game</ALIASNAME>
+       <TEXT>Game info</TEXT>
+      </O2PAGPARS>
+      <O2PAGPARS>
+       <APPLNAME>ZZATM</APPLNAME>
+       <PAGEKEY>FLASHCARD.HTML</PAGEKEY>
+       <COMPNAME>GAME_NAME</COMPNAME>
+       <VERSION>A</VERSION>
+       <PARDECLTYP>1</PARDECLTYP>
+       <TYPTYPE>1</TYPTYPE>
+       <TYPE>ZZATM_GAMES-GAME</TYPE>
+       <ALIASNAME>game_name</ALIASNAME>
+       <TEXT>Game name</TEXT>
+      </O2PAGPARS>
+      <O2PAGPARS>
+       <APPLNAME>ZZATM</APPLNAME>
+       <PAGEKEY>FLASHCARD.HTML</PAGEKEY>
+       <COMPNAME>PLAYER</COMPNAME>
+       <VERSION>A</VERSION>
+       <PARDECLTYP>1</PARDECLTYP>
+       <TYPTYPE>1</TYPTYPE>
+       <TYPE>ZZATM_PLAYERS</TYPE>
+       <ALIASNAME>player</ALIASNAME>
+       <TEXT>Player info</TEXT>
+      </O2PAGPARS>
+      <O2PAGPARS>
+       <APPLNAME>ZZATM</APPLNAME>
+       <PAGEKEY>FLASHCARD.HTML</PAGEKEY>
+       <COMPNAME>PLAYER_NAME</COMPNAME>
+       <VERSION>A</VERSION>
+       <PARDECLTYP>1</PARDECLTYP>
+       <TYPTYPE>1</TYPTYPE>
+       <TYPE>ZZATM_PLAYERS-NAME</TYPE>
+       <ALIASNAME>player_name</ALIASNAME>
+       <TEXT>Player name</TEXT>
+      </O2PAGPARS>
+      <O2PAGPARS>
+       <APPLNAME>ZZATM</APPLNAME>
+       <PAGEKEY>FLASHCARD.HTML</PAGEKEY>
+       <COMPNAME>QUESTIONS</COMPNAME>
+       <VERSION>A</VERSION>
+       <PARDECLTYP>1</PARDECLTYP>
+       <TYPTYPE>1</TYPTYPE>
+       <TYPE>ZZATM_QUESTIONS_TT</TYPE>
+       <ALIASNAME>questions</ALIASNAME>
+       <TEXT>Questions table</TEXT>
+      </O2PAGPARS>
+      <O2PAGPARS>
+       <APPLNAME>ZZATM</APPLNAME>
+       <PAGEKEY>FLASHCARD.HTML</PAGEKEY>
+       <COMPNAME>QUESTIONS_JSON</COMPNAME>
+       <VERSION>A</VERSION>
+       <PARDECLTYP>1</PARDECLTYP>
+       <TYPTYPE>1</TYPTYPE>
+       <TYPE>STRING</TYPE>
+       <ALIASNAME>questions_json</ALIASNAME>
+       <TEXT>Questions in JSON</TEXT>
+      </O2PAGPARS>
+     </PARAMETERS>
+    </item>
+    <item>
+     <ATTRIBUTES>
+      <APPLNAME>ZZATM</APPLNAME>
+      <PAGEKEY>GAME.HTML</PAGEKEY>
+      <PAGENAME>game.html</PAGENAME>
+      <MIMETYPE>text/html</MIMETYPE>
+      <SECUREHTTP>X</SECUREHTTP>
+      <LAYOUTLANGU>E</LAYOUTLANGU>
+      <VERSION>A</VERSION>
+      <LANGU>E</LANGU>
+      <DESCRIPT>Game selection page</DESCRIPT>
+     </ATTRIBUTES>
+     <EVENT_HANDLERS>
+      <O2PAGEVHS>
+       <APPLNAME>ZZATM</APPLNAME>
+       <PAGEKEY>GAME.HTML</PAGEKEY>
+       <EVHANDLER>ONREQUEST</EVHANDLER>
+       <VERSION>A</VERSION>
+       <EVHNAME>OnRequest</EVHNAME>
+       <SOURCE>
+        <item>* the handler is called whenever a request is made for a particular page</item>
+        <item>* it is used to restore the internal data structures from the request</item>
+        <item>  data(player_name) = request-&gt;get_form_field( &apos;player&apos; ).</item>
+        <item/>
+        <item>  if player_name is not initial.</item>
+        <item>    select * from zzatm_games where name = @player_name</item>
+        <item>      order by game into table @games.</item>
+        <item>  endif.</item>
+       </SOURCE>
+      </O2PAGEVHS>
+     </EVENT_HANDLERS>
+     <PARAMETERS>
+      <O2PAGPARS>
+       <APPLNAME>ZZATM</APPLNAME>
+       <PAGEKEY>GAME.HTML</PAGEKEY>
+       <COMPNAME>GAMES</COMPNAME>
+       <VERSION>A</VERSION>
+       <PARDECLTYP>1</PARDECLTYP>
+       <TYPTYPE>1</TYPTYPE>
+       <TYPE>ZZATM_GAMES_TT</TYPE>
+       <ALIASNAME>games</ALIASNAME>
+       <TEXT>Games table</TEXT>
+      </O2PAGPARS>
+      <O2PAGPARS>
+       <APPLNAME>ZZATM</APPLNAME>
+       <PAGEKEY>GAME.HTML</PAGEKEY>
+       <COMPNAME>PLAYER_NAME</COMPNAME>
+       <VERSION>A</VERSION>
+       <PARDECLTYP>1</PARDECLTYP>
+       <TYPTYPE>1</TYPTYPE>
+       <TYPE>ZZATM_PLAYERS-NAME</TYPE>
+       <ALIASNAME>player_name</ALIASNAME>
+       <TEXT>Player name</TEXT>
+      </O2PAGPARS>
+     </PARAMETERS>
+    </item>
+    <item>
+     <ATTRIBUTES>
+      <APPLNAME>ZZATM</APPLNAME>
+      <PAGEKEY>INDEX.HTML</PAGEKEY>
+      <PAGENAME>index.html</PAGENAME>
+      <MIMETYPE>text/html</MIMETYPE>
+      <SECUREHTTP>X</SECUREHTTP>
+      <IS_START_PAGE>X</IS_START_PAGE>
+      <LAYOUTLANGU>E</LAYOUTLANGU>
+      <VERSION>A</VERSION>
+      <LANGU>E</LANGU>
+      <DESCRIPT>ABAP Teachable Machine Game</DESCRIPT>
+     </ATTRIBUTES>
+     <EVENT_HANDLERS>
+      <O2PAGEVHS>
+       <APPLNAME>ZZATM</APPLNAME>
+       <PAGEKEY>INDEX.HTML</PAGEKEY>
+       <EVHANDLER>ONINITIALIZATION</EVHANDLER>
+       <VERSION>A</VERSION>
+       <EVHNAME>OnInitialization</EVHNAME>
+       <SOURCE>
+        <item>* event handler for data retrieval</item>
+        <item>* Get all the Players that are &quot;configured&quot; along with their audio/sound settings</item>
+        <item>select * from zzatm_players into table players order by name.</item>
+       </SOURCE>
+      </O2PAGEVHS>
+      <O2PAGEVHS>
+       <APPLNAME>ZZATM</APPLNAME>
+       <PAGEKEY>INDEX.HTML</PAGEKEY>
+       <EVHANDLER>ONINPUTPROCESSING</EVHANDLER>
+       <VERSION>A</VERSION>
+       <EVHNAME>OnInputProcessing</EVHNAME>
+       <SOURCE>
+        <item>* event handler for checking and processing user input and</item>
+        <item>* for defining navigation</item>
+        <item/>
+        <item>case event_id.</item>
+        <item>  when &apos;player_select&apos;.</item>
+        <item>    data(player_name) = request-&gt;get_form_field( &apos;player&apos; ).</item>
+        <item>    check player_name is not initial.</item>
+        <item>    data(view_name) = |game.html?player={ player_name }|.</item>
+        <item>    navigation-&gt;goto_page( view_name ).</item>
+        <item>  when others.</item>
+        <item>    &quot; do nothing</item>
+        <item>endcase.</item>
+       </SOURCE>
+      </O2PAGEVHS>
+      <O2PAGEVHS>
+       <APPLNAME>ZZATM</APPLNAME>
+       <PAGEKEY>INDEX.HTML</PAGEKEY>
+       <EVHANDLER>ONMANIPULATION</EVHANDLER>
+       <VERSION>A</VERSION>
+       <EVHNAME>OnManipulation</EVHNAME>
+       <SOURCE>
+        <item>* event handler to manipulate dynamically the HTTP stream.</item>
+       </SOURCE>
+      </O2PAGEVHS>
+     </EVENT_HANDLERS>
+     <PARAMETERS>
+      <O2PAGPARS>
+       <APPLNAME>ZZATM</APPLNAME>
+       <PAGEKEY>INDEX.HTML</PAGEKEY>
+       <COMPNAME>PLAYERS</COMPNAME>
+       <VERSION>A</VERSION>
+       <PARDECLTYP>1</PARDECLTYP>
+       <TYPTYPE>1</TYPTYPE>
+       <TYPE>ZZATM_PLAYERS_TT</TYPE>
+       <ALIASNAME>PLAYERS</ALIASNAME>
+       <TEXT>Players Table</TEXT>
+      </O2PAGPARS>
+     </PARAMETERS>
+    </item>
+    <item>
+     <ATTRIBUTES>
+      <APPLNAME>ZZATM</APPLNAME>
+      <PAGEKEY>LICENSE.HTML</PAGEKEY>
+      <PAGENAME>license.html</PAGENAME>
+      <MIMETYPE>text/html</MIMETYPE>
+      <LAYOUTLANGU>E</LAYOUTLANGU>
+      <VERSION>A</VERSION>
+      <LANGU>E</LANGU>
+      <DESCRIPT>MIT License</DESCRIPT>
+     </ATTRIBUTES>
+    </item>
+   </PAGES>
+  </asx:values>
+ </asx:abap>
+</abapGit>
