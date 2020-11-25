@@ -61,13 +61,12 @@ See array index 4,5,6 and look at the matching answer - 1, 3,2 - so, don't alway
 2. Select a player
 [![select-a-player.png](https://i.postimg.cc/cH8cb6xh/select-a-player.png)](https://postimg.cc/xJnHkfbN)
 
-3. Select a game
+3. Select and start a game
 [![select-a-game.png](https://i.postimg.cc/wvKN32z5/select-a-game.png)](https://postimg.cc/3yBNcgdW)
 
-4. Say the flash card that is displayed!
-
-#### Gameplay screen
+4. Gameplay screen overview
 [![gameplay-screen.png](https://i.postimg.cc/9X1PCz1L/gameplay-screen.png)](https://postimg.cc/V5r0Ffxt)
+Say the flash card that is displayed and if your answer matched, the question # chip at the bottom will turn green and a correct answer sound will play if you have it configured.
 
 # Credits
 See 'Credits' page in application
