@@ -5,7 +5,7 @@ A game developed in ABAP powered by SAP NetWeaver and Google Teachable Machine.
 Seeking to get some hands on with Teachable Machine and creating a game that my two toddlers might like to play with.
 
 # Pre-requisites
-- SAP ABAP AS NetWeaver 752 - I used the Developer Edition to create this
+- SAP NetWeaver AS ABAP 752 - I used the current available Developer Edition to create this. Might be compatible with lower versions but no guarantees.
 - Internet connection when playing the game - because of required JS/CSS libraries
 - A modern browser - Yes, no IE please.
 
