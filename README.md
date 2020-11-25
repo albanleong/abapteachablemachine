@@ -1,10 +1,9 @@
 # Project description
-Bringing together a 20+ year old technology platform with today's latest ML engine. A flash card game developed in ABAP and Javascript powered by SAP NetWeaver and Teachable Machine by Google.
-[![gameplay.gif](https://i.postimg.cc/vmCprrjH/gameplay.gif)](https://postimg.cc/KKrqFMxd)
-
+Bringing together a 20+ year old technology platform with today's latest ML engine. A simple and basic flash card game developed in ABAP and Javascript powered by SAP NetWeaver and Teachable Machine by Google.
+<img src="https://i.postimg.cc/vmCprrjH/gameplay.gif" alt="gameplay.gif" width=50% height=50%>
 
 # Motivation
-After reading a blog and watching a video by Dale Markowitz [Build a Machine Learning Model in 10 Minutes](https://daleonai.com/ml-model-ten-mins) on how easy it is to now create and train your own model with Teachable Machine, I was hoping to get some hands on with it. Also, my two kids were the motivation and inspiration in creating this flash card game and as an added bonus, they seemed to like it! Can't say that I am proud of the final game UI/UX design and aesthetics but since I am not a front-end/UI/UX designer, this'll do...
+After reading a blog and watching a video by Dale Markowitz [Build a Machine Learning Model in 10 Minutes](https://daleonai.com/ml-model-ten-mins) on how easy it is to now create and train your own model with Teachable Machine powered by TensorFlow.js, I was hoping to get some hands on with it. Also, my two kids were the motivation and inspiration in creating this flash card game and as an added bonus, they seemed to like it! Can't say that I am proud of the final game UI/UX design and aesthetics but since I am not a front-end/UI/UX designer, this'll do...
 
 
 # Features
