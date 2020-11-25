@@ -1,5 +1,5 @@
 # Project description
-Bringing together a 20+ year old technology platform with today's latest ML engine. A simple and basic flash card game developed in ABAP and Javascript powered by SAP NetWeaver and Teachable Machine by Google.
+Bringing together a 15+ year old technology platform with today's latest ML engine. A simple and basic flash card game developed in ABAP and Javascript powered by SAP NetWeaver and Teachable Machine by Google.
 <img src="https://i.postimg.cc/vmCprrjH/gameplay.gif" alt="gameplay.gif" width=50% height=50%>
 
 # Motivation
