@@ -40,7 +40,7 @@ NOTE: The attached sample ML model was trained with only my voice, it might not 
 1. Game name - Up to 40 characters is supported but avoid using any special characters such as &,%,*,$ etc...
 2. Game type - Only one option is available now but this gives the flexibility to create more games and route them to different pages.
 3. Game model - The full and complete URL (https) to the ML model that contains model.json, metadata.json and weights.bin
-4. Match probability - The minimum score match to consider that it's a correct answer. When the ML model is 100% sure, the score is 1.00. Recommended config would be between 0.80 (easy difficulty - not really accurate), 0.90 (medium difficulty) or 1.00 (hard difficulty - highly accurate match)
+4. Match probability - The minimum score match to consider that it's a correct answer. When the ML model is 100% sure, the score is 1.00. Recommended config could be something like 0.80 (easy difficulty - not really accurate), 0.90 (medium difficulty) or 1.00 (hard difficulty - highly accurate match). You'll just need to tweak this and it also depends on your ML model as well.
 5. Time to answer - The time in seconds to display the flash card image and listen for an answer. Rcommended config can be something like 10 seconds (easy difficulty) - 5 seconds (medium difficulty) or 3 seconds (hard difficulty).
 [![games-config.png](https://i.postimg.cc/DwZd7tzR/games-config.png)](https://postimg.cc/Yh5m3DYx)
 
