@@ -15,7 +15,8 @@ Seeking to get some hands on with Teachable Machine and creating a game that my 
 [![games-config.png](https://i.postimg.cc/DwZd7tzR/games-config.png)](https://postimg.cc/Yh5m3DYx)
 [![questions-config.png](https://i.postimg.cc/vZW2VRyT/questions-config.png)](https://postimg.cc/k2gv0pBP)
 
-- Sample model, images and sound effects included in BSP application - see folder "demo_assets"
+- Sample model, images and sound effects included in BSP application - see folder "demo_assets". 
+NOTE: Model was trained with my voice, it might not work for you - in my test with my kids, it detected their response at about 70% accuracy.
 [![demo-assets.png](https://i.postimg.cc/rwrGd5S9/demo-assets.png)](https://postimg.cc/qNp6ShDt)
 
 - Debug mode. If option is checked for the Player, the model class labels and scores will be displayed during gameplay
