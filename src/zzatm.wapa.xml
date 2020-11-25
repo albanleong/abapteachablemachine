@@ -14,6 +14,18 @@
     <item>
      <ATTRIBUTES>
       <APPLNAME>ZZATM</APPLNAME>
+      <PAGEKEY>CREDITS.HTML</PAGEKEY>
+      <PAGENAME>credits.html</PAGENAME>
+      <MIMETYPE>text/html</MIMETYPE>
+      <LAYOUTLANGU>E</LAYOUTLANGU>
+      <VERSION>A</VERSION>
+      <LANGU>E</LANGU>
+      <DESCRIPT>Credits</DESCRIPT>
+     </ATTRIBUTES>
+    </item>
+    <item>
+     <ATTRIBUTES>
+      <APPLNAME>ZZATM</APPLNAME>
       <PAGEKEY>FLASHCARD.HTML</PAGEKEY>
       <PAGENAME>flashcard.html</PAGENAME>
       <MIMETYPE>text/html</MIMETYPE>
