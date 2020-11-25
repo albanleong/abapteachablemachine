@@ -22,11 +22,13 @@ NOTE: The attached sample ML model was trained with only my voice, it might not 
 - Internet connection when playing the game - because of required JS/CSS libraries
 - A microphone so that your response can be captured and matched with the ML model
 - A modern browser - Yes, anything but IE please.
+- A ML model trained in Teachable Machine (sample model found in https://vhcalnplci.dummy.nodomain:44300/sap/bc/bsp/sap/zzatm/demo_assets/model/)
+- Images that matches the "answers" in the ML model (sample images found in https://vhcalnplci.dummy.nodomain:44300/sap/bc/bsp/sap/zzatm/demo_assets/images/)
 
 
 # Setup
-1. Train and test your own ML audio model on [Teachable Machine](https://teachablemachine.withgoogle.com/) - HAVE FUN!
-2. Export model : Either download the model (ZIP file) or get the shareable link on Teachable Machine. 
+1. Train and test your own ML audio model on [Teachable Machine](https://teachablemachine.withgoogle.com/) - It's really FUN!
+2. Export the model : Either download the model (ZIP file) or get the shareable link on Teachable Machine. 
 3. If you've downloaded the model locally, unzip your model and upload 'metadata.json', 'model.json' and 'weights.bin' to ABAP server. I have created a 'models' folder under the BSP application ZZATM.
 3. Run transaction ZZATMSETUP to create a new player, game and questions.
 
