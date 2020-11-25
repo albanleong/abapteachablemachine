@@ -1,4 +1,4 @@
-# Project title
+# Project description
 A game developed in ABAP powered by SAP NetWeaver and Google Teachable Machine.
 
 # Motivation
