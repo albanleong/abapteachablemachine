@@ -34,8 +34,9 @@ NOTE: The attached sample ML model was trained with only my voice, it might not 
 
 #### Player
 1. Player name - Up to 40 characters is supported but avoid using any special characters such as &,%,*,$ etc...
-2. Debug - If this option is checked, during gameplay, the class labels and scores will be displayed below the screen.
-3. Sound settings - configure different background music during gameplay and sound effects for when getting a correct answer and when the game ends.
+2. Profile picture - URL to a small avatar picture. I've included four sample images in the demo_assets folder.
+3. Debug - If this option is checked, during gameplay, the class labels and scores will be displayed below the screen.
+4. Sound settings - configure different background music during gameplay and sound effects for when getting a correct answer and when the game ends.
 [![player-config.png](https://i.postimg.cc/hPn2RyTq/player-config.png)](https://postimg.cc/yWfmFTLf)
 
 #### Games
